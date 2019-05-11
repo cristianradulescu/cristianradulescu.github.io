@@ -1,0 +1,255 @@
+---
+layout: post
+status: publish
+published: true
+title: Doctrine entities in Twig templates
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: "In a Symfony2 project, Doctrine entities can be used inside Twig templates
+  with the help of Twig extensions. \r\nThe example works with the standard Symfony2
+  installation and the AcmeDemoBundle."
+wordpress_id: 360
+wordpress_url: http://cristian-radulescu.ro/?p=360
+date: '2013-01-30 19:42:27 +0200'
+date_gmt: '2013-01-30 17:42:27 +0200'
+categories:
+- Programming
+- PHP
+- Symfony2
+- Doctrine
+- Twig
+tags:
+- Twig extensions
+comments:
+- id: 866
+  author: cbtraize
+  author_email: cbtraize@aol.com
+  author_url: http://gravatar.com/cbtraize
+  date: '2013-10-11 13:17:48 +0300'
+  date_gmt: '2013-10-11 11:17:48 +0300'
+  content: "Hello \r\n\r\nI have a problem in symfony2\r\n\r\nContextErrorException:
+    Catchable Fatal Error: Argument 1 passed to GG\\UserBundle\\Twig\\UserExtension::__construct()
+    must be an instance of Doctrine\\ORM\\EntityManager, none given, called in /var/www/clients/client1/web1/web/symfony/app/cache/dev/appDevDebugProjectContainer.php
+    on line 1603 and defined in /var/www/clients/client1/web1/web/symfony/src/GG/UserBundle/Twig/UserExtension.php
+    line 13\r\n\r\n\r\nMy Twig Extends :\r\nem = $em;\r\n\t\t$this->conn = $em->getConnection();\r\n\t}\r\n\tpublic
+    function getFunctions()\r\n\t{\r\n\t\treturn array(\r\n\t\t'geekInscrits' => new
+    \\Twig_Function_Method($this, 'nbGeekInscrits'),\r\n\t\t);\r\n\t}\r\n\tpublic
+    function nbGeekInscrits()\r\n\t{\r\n\t\t$sql = 'COUNT(*) FROM GG_User';\r\n\t\treturn
+    $this->conn->fetchAll($sql);\r\n\t}\r\n\r\n\tpublic function getName()\r\n\t{\r\n\t\treturn
+    'gguser_extension';\r\n\t}\r\n}\r\n\r\n?>\r\n\r\n# twig extension\r\nservices:\r\n
+    \   my.twig.extension:\r\n        class: GG\\UserBundle\\Twig\\UserExtension\r\n
+    \       arguments:\r\n            em: \"@doctrine.orm.entity_manager\"\r\n        tags:\r\n
+    \           -  { name: twig.extension }\r\n\r\n\r\nCan you help me ? \r\n\r\nThanks
+    you very much"
+- id: 867
+  author: cbtraize
+  author_email: cbtraize@aol.com
+  author_url: http://gravatar.com/cbtraize
+  date: '2013-10-11 13:19:06 +0300'
+  date_gmt: '2013-10-11 11:19:06 +0300'
+  content: "Excuse me this is my twig class :\r\n\r\nnamespace GG\\UserBundle\\Twig;\r\nuse
+    Doctrine\\ORM\\EntityManager;\r\n\r\n\r\nclass UserExtension extends \\Twig_Extension\r\n{\r\n\tprivate
+    $em;\r\n\tprivate $conn;\r\n \r\n\tpublic function __construct(\\Doctrine\\ORM\\EntityManager
+    $em) {\r\n\t\t$this->em = $em;\r\n\t\t$this->conn = $em->getConnection();\r\n\t}\r\n\tpublic
+    function getFunctions()\r\n\t{\r\n\t\treturn array(\r\n\t\t'geekInscrits' => new
+    \\Twig_Function_Method($this, 'nbGeekInscrits'),\r\n\t\t);\r\n\t}\r\n\tpublic
+    function nbGeekInscrits()\r\n\t{\r\n\t\t$sql = 'COUNT(*) FROM GG_User';\r\n\t\treturn
+    $this->conn->fetchAll($sql);\r\n\t}\r\n\r\n\tpublic function getName()\r\n\t{\r\n\t\treturn
+    'gguser_extension';\r\n\t}\r\n}"
+- id: 868
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2013-10-12 12:32:14 +0300'
+  date_gmt: '2013-10-12 10:32:14 +0300'
+  content: |-
+    The services are not defined correctly. the arguments for your Twig extension should be like:
+    <code>arguments: ["@doctrine.orm.entity_manager"]</code>
+- id: 6743
+  author: Michelle
+  author_email: 1acco@mail.ru
+  author_url: ''
+  date: '2015-06-19 16:11:29 +0300'
+  date_gmt: '2015-06-19 14:11:29 +0300'
+  content: big ths for this example, he helped me :)
+- id: 7227
+  author: Andrei
+  author_email: andreimanolache98@yahoo.ro
+  author_url: ''
+  date: '2015-08-09 19:59:01 +0300'
+  date_gmt: '2015-08-09 17:59:01 +0300'
+  content: "Salutari! Dupa ore intregi de chin am dat peste articolul asta. \r\nMersi
+    mult!"
+- id: 8650
+  author: amine
+  author_email: mostaelectron@yahoo.fr
+  author_url: ''
+  date: '2016-12-17 15:57:38 +0200'
+  date_gmt: '2016-12-17 12:57:38 +0200'
+  content: thanks it was very useful.
+- id: 8655
+  author: Zuhayer Tahir
+  author_email: zuhayer171288@gmail.com
+  author_url: https://plus.google.com/+ZuhayerTahir
+  date: '2017-01-16 12:15:36 +0200'
+  date_gmt: '2017-01-16 09:15:36 +0200'
+  content: This was useful, thanks a lot
+---
+<p>In a Symfony2 project, Doctrine entities can be used inside Twig templates with the help of Twig extensions.</p>
+<p>The example works with the standard Symfony2 installation and the AcmeDemoBundle, and it is supposed to add a set of links on one of the demo pages. Each link represents a color, while the HEX code for that color is displayed when the link is clicked. The colors are retrieved from the database.</p>
+<p>The example is using Twig functions, but an alternative which is using global variables is also presented.</p>
+<h2>The Doctrine entity:</h2>
+<pre class="lang:php decode:true" title="src/Acme/DemoBundle/Entity/Color.php">namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="color")
+ */
+class Color
+{
+  /**
+   * @ORM\Id
+   * @ORM\Column(type="integer")
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  protected $id;
+
+  /**
+   * @ORM\Column(type="string", length=100)
+   */
+  protected $name;
+
+  /**
+   * @ORM\Column(type="string", length=8)
+   */
+  protected $hex;
+
+  /**
+   * Get id
+   *
+   * @return integer
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  /**
+   * Set name
+   *
+   * @param string $name
+   * @return Color
+   */
+  public function setName($name)
+  {
+    $this->name = $name;
+
+    return $this;
+  }
+
+  /**
+   * Get name
+   *
+   * @return string
+   */
+  public function getName()
+  {
+    return $this->name;
+  }
+
+  /**
+   * Set hex
+   *
+   * @param string $hex
+   * @return Color
+   */
+  public function setHex($hex)
+  {
+    $this->hex = $hex;
+
+    return $this;
+  }
+
+  /**
+   * Get hex
+   *
+   * @return string
+   */
+  public function getHex()
+  {
+    return $this->hex;
+  }
+}</pre>
+<p>This entity has a basic structure which should store the name and HEX code for a color.</p>
+<h2>The Twig extension:</h2>
+<pre class="lang:php decode:true" title="src/Acme/DemoBundle/Twig/Extension/ColorExtension.php">namespace Acme\DemoBundle\Twig\Extension;
+
+/**
+ * Custom Twig extension used to retrieve the colors.
+ */
+class ColorExtension extends \Twig_Extension
+{
+  /**
+   * @var EntityManager
+   */
+  protected $em;
+
+  public function __construct($em)
+  {
+    $this->em = $em;
+  }
+
+  public function getName()
+  {
+    return 'color_extension';
+  }
+
+  public function getFunctions()
+  {
+    return array(
+      'get_colors' => new \Twig_Function_Method($this, 'getColors')
+    );
+  }
+
+  public function getColors()
+  {
+    return $this->em->getRepository('AcmeDemoBundle:Color')->findAll();
+  }
+}</pre>
+<p>The following list contains the most important remarks related to the Twig extension:</p>
+<ul>
+<li>The string returned by the "getName" &nbsp;method - "color_extension" will be used to register the extension;</li>
+<li>The "getColors" method is the one which returns the entities, using the EntityManager;</li>
+<li>In order to have access to the EntityManager, the Twig extension needs to be registered by specifying that the EntityManager service (identified as "doctrine.orm.entity_manager") will be passed as argument;</li>
+<li>The key "get_colors" from the array returned by the "getFunctions" method is the actual Twig function name which needs to be called in the Twig template to return the entities.</li>
+</ul>
+<h2>Twig extension registration:</h2>
+<p>In order to register the Twig extension the following piece of code needs to be added to src/Acme/DemoBundle/Resources/config/services.xml:</p>
+<pre class="lang:default decode:true"><service id="twig.extension.acme.demo_bundle.color_extension" class="Acme\DemoBundle\Twig\Extension\ColorExtension">
+  <tag name="twig.extension" />
+  <argument type="service" id="doctrine.orm.entity_manager" />
+</service></pre>
+<p>As previously mentioned, the "color_extension" string is used in the service id and the EntityManager service is sent as parameter for the Twig extension.</p>
+<p>Everything should be set by now, the only thing that needs to be done is to call the "get_colors" function inside a Twig template. Here's an example:</p>
+<pre class="lang:default decode:true ">{% set colors = get_colors() %}
+{% for color in colors %}
+  <a href="javascript:alert('{{color.hex}}'); return false;">{{color.name}}</a>
+{% endfor %}</pre>
+<h2>The global variables alternative.</h2>
+<p>Update the Twig extension (src/Acme/DemoBundle/Twig/Extension/ColorExtension.php) with the following code:</p>
+<pre class="lang:php decode:true">public function getGlobals()
+{
+  return array('colors' => $this->getColors());
+}</pre>
+<p>This means that the "colors" key will become a global variable and can be used in a Twig template.</p>
+<pre class="lang:default decode:true">{% for color in colors %}
+  <a href="javascript:alert('{{color.hex}}'); return false;">{{color.name}}</a>
+{% endfor %}</pre>

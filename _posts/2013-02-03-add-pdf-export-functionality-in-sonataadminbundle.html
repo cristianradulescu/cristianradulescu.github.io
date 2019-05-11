@@ -1,0 +1,298 @@
+---
+layout: post
+status: publish
+published: true
+title: Add PDF export functionality in SonataAdminBundle
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: By default SonataAdminBundle doesn't come with a PDF export functionality.
+  Since this is a nice feature to have in your application here's a way to add PDF
+  export to the CRUD pages. The example works with the standard Symfony2 installation
+  and the AcmeDemoBundle. The PDF will be generated using KnpSnappyBundle.
+wordpress_id: 381
+wordpress_url: http://cristian-radulescu.ro/?p=381
+date: '2013-02-03 22:55:33 +0200'
+date_gmt: '2013-02-03 20:55:33 +0200'
+categories:
+- Programming
+- PHP
+- Symfony2
+tags:
+- SonataAdminBundle
+- knpSnappyBundle
+- PDF export
+comments:
+- id: 862
+  author: Chris
+  author_email: virtualize@gmx.net
+  author_url: ''
+  date: '2013-05-14 18:52:23 +0300'
+  date_gmt: '2013-05-14 16:52:23 +0300'
+  content: Thanks a lot. That saved my day
+- id: 1131
+  author: Rym
+  author_email: trimech.rim@gmail.com
+  author_url: ''
+  date: '2014-09-15 12:28:04 +0300'
+  date_gmt: '2014-09-15 10:28:04 +0300'
+  content: "I followed this tutorial as it is but it throws me this exception: \r\nAttempted
+    to call method \"renderView\" on class\"projectName\\AdminBundle\\Export\\Exporter.
+    \r\nAny idea how to fix this?"
+- id: 1133
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2014-09-15 13:41:03 +0300'
+  date_gmt: '2014-09-15 11:41:03 +0300'
+  content: "@Rym: I think there is a small error in the code. Try to use \"$this->templateEngine->renderView\"
+    instead of \"$this->renderView\".\r\n\r\nPlease let me know if this works in order
+    to update the code."
+- id: 1156
+  author: Rym
+  author_email: trimech.rim@gmail.com
+  author_url: ''
+  date: '2014-09-17 21:56:42 +0300'
+  date_gmt: '2014-09-17 19:56:42 +0300'
+  content: Thank you for your quick answer @Cristian!! "$this->templateEngine->render"
+    worked   :)
+- id: 1158
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2014-09-18 07:32:35 +0300'
+  date_gmt: '2014-09-18 05:32:35 +0300'
+  content: Great, I've corrected the mistake. :)
+- id: 2101
+  author: Fatma
+  author_email: fatma_bouchekoi@hotmail.com
+  author_url: ''
+  date: '2014-11-14 18:45:52 +0200'
+  date_gmt: '2014-11-14 16:45:52 +0200'
+  content: Thank you for this tutorial, but the service code is not clear. Could you
+    please correct it?
+- id: 4326
+  author: Andrey S
+  author_email: whyte624@gmail.com
+  author_url: https://plus.google.com/+whyte624
+  date: '2015-02-04 16:51:54 +0200'
+  date_gmt: '2015-02-04 14:51:54 +0200'
+  content: Thanks for your post! I've implemented https://github.com/whyte624/sonata-admin-extra-export-bundle,
+    more or less based on the info posted above.
+- id: 4362
+  author: Sonata Admin экспорт в pdf | Блог с человеческим лицом
+  author_email: ''
+  author_url: http://whyte624.ru/2015/02/05/sonata-admin-pdf-export/
+  date: '2015-02-05 18:04:12 +0200'
+  date_gmt: '2015-02-05 16:04:12 +0200'
+  content: "[&#8230;] основу реализации взят подход описаный здесь. Сама реализация
+    выполнена в виде двух трейтов, [&#8230;]"
+- id: 4997
+  author: Albert
+  author_email: albert@zonadisseny.com
+  author_url: ''
+  date: '2015-02-18 13:24:11 +0200'
+  date_gmt: '2015-02-18 11:24:11 +0200'
+  content: "I agree with Fatma, the service code is not clearly, it's a bit difficult
+    to understand.\r\n\r\nWould be great correct it\r\n\r\nThanks!"
+- id: 5121
+  author: Fatma
+  author_email: fatma_bouchekoi@hotmail.com
+  author_url: ''
+  date: '2015-02-24 15:41:14 +0200'
+  date_gmt: '2015-02-24 13:41:14 +0200'
+  content: "Here is the missing piece of code in service.xml file :\r\n\r\n        \r\n
+    \           \r\n                \r\n            \r\n            \r\n                \r\n
+    \           \r\n        \r\n\r\nThis worked for me, i hope it'll help!!"
+- id: 5489
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2015-03-04 14:47:40 +0200'
+  date_gmt: '2015-03-04 12:47:40 +0200'
+  content: "The service.xml file should be ok now, there was a formatting issue caused
+    by Wordpress :)\r\nThank you guys for the help"
+- id: 7737
+  author: webDEVILopers (@webdevilopers)
+  author_email: webdevilopers@twitter.example.com
+  author_url: http://twitter.com/webdevilopers
+  date: '2015-10-27 12:38:29 +0200'
+  date_gmt: '2015-10-27 09:38:29 +0200'
+  content: I think the service should be "knp_snappy.pdf" not "knp.snappy_pdf".
+- id: 8074
+  author: Christophe
+  author_email: spyke13008@gmail.com
+  author_url: ''
+  date: '2016-01-27 17:59:41 +0200'
+  date_gmt: '2016-01-27 14:59:41 +0200'
+  content: "Humm.. I've the same problem : \r\nUncaught PHP Exception Symfony\\Component\\Debug\\Exception\\FatalErrorException:
+    \"Error: Call to a member function renderView() on a non-object\"\r\n\r\nwith
+    \r\n$html = $this->templateEngine->renderView('AppBundle:Export:pdf.html.twig',
+    array(\r\n            'source' => $source));\r\n        $content = $this->knpSnappyPdf->getOutputFromHtml($html);\r\n\r\nIt's
+    strange .. (SF 2.8)"
+- id: 8078
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2016-01-28 16:05:05 +0200'
+  date_gmt: '2016-01-28 13:05:05 +0200'
+  content: "@Christophe: Looks like the templating service is not injected in the
+    Exporter. First, you should check if the services.xml file is loaded. If this
+    is not the problem, try to debug the Exporter::setTemplateEngine() method and
+    see if the templating service is correctly set."
+- id: 8160
+  author: chalas_r
+  author_email: robin.chalas@gmail.com
+  author_url: https://github.com/chalasr
+  date: '2016-03-17 23:50:49 +0200'
+  date_gmt: '2016-03-17 20:50:49 +0200'
+  content: "I used this post for a time so I submitted a PR for this feature.\r\nFor
+    people that may be interested, see https://github.com/sonata-project/exporter/pull/57.\r\nAnd
+    the repository (re-forked after deletion) https://github.com/chalasr/exporter"
+- id: 8656
+  author: dhafer
+  author_email: dhafe.amri@esprit.tn
+  author_url: ''
+  date: '2017-03-23 19:42:09 +0200'
+  date_gmt: '2017-03-23 16:42:09 +0200'
+  content: "thanks for this tutorial .\r\nI have a problem with the template \r\nthis
+    my error : \r\nUnable to find template \"UserBundle:Export:pdf.html.twig\" (looked
+    into: /var/www/html/public/siemnew/app/Resources/views, /var/www/html/public/siemnew/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form,
+    /var/www/html/public/siemnew/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views)."
+- id: 8657
+  author: leila fahimi
+  author_email: leyla.fahimi@gmail.com
+  author_url: https://plus.google.com/114251763423917863084
+  date: '2017-04-24 12:13:53 +0300'
+  date_gmt: '2017-04-24 09:13:53 +0300'
+  content: "For the people using YAML instead of XML here's the code of the service
+    :\r\n\r\nservices:\r\n    sonata.admin.exporter:\r\n        class: BlogBundle\\Export\\Exporter\r\n
+    \       calls:\r\n            - [setKnpSnappyPdf, [@knp_snappy.pdf ]]\r\n            -
+    [setTemplateEngine, [@templating ]]\r\n\r\n\r\nI had a problem with the path of
+    wkhtmltopdf in my config.yml, and this solved my problem :\r\n\r\n1 - copy the
+    \"wkhtmltopdf\" folder from \"C:\\programs\" to your \"app/Resources/create_a_folder_named_native\"
+    \r\n\r\n2 -  in your config.yml put this :\r\n binary: \"%kernel.root_dir%/Resources/native/wkhtmltopdf/bin/wkhtmltopdf.exe\""
+- id: 8731
+  author: webdesign2000
+  author_email: kadrad2002@yahoo.fr
+  author_url: http://gravatar.com/webdesign2000
+  date: '2018-10-31 10:26:07 +0200'
+  date_gmt: '2018-10-31 07:26:07 +0200'
+  content: hello , could you update the code for symfony 4
+---
+<p>By default SonataAdminBundle doesn't come with a PDF export functionality. Since this is a nice feature to have in your application here's a way to add PDF export to the CRUD pages.</p>
+<p>The example works with the standard Symfony2 installation and the AcmeDemoBundle. The PDF will be generated using <a title="KnpSnappyBundle GIT page" href="https://github.com/KnpLabs/KnpSnappyBundle" target="_blank" rel="noopener">KnpSnappyBundle</a>&nbsp;(the installation process is not covered here).</p>
+<h2>The Doctrine Entity:</h2>
+<p>See&nbsp;<a href="http://cristian-radulescu.ro/article/doctrine-entities-in-twig-templates.html">http://cristian-radulescu.ro/article/doctrine-entities-in-twig-templates.html</a></p>
+<h2>The Color Admin class:</h2>
+<pre class="lang:php decode:true" title="src/Acme/DemoBundle/Admin/ColorAdmin.php">namespace Acme\DemoBundle\Admin;
+
+use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Form\FormMapper;
+
+class ColorAdmin extends Admin
+{
+  public $baseRouteName = 'color';
+  public $baseRoutePattern = '/color';
+
+  protected function configureFormFields(FormMapper $formMapper)
+  {
+    $formMapper
+       ->add('name')
+       ->add('hex');
+  }
+
+  protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+  {
+    $datagridMapper
+      ->add('name')
+       ->add('hex');
+  }
+
+  protected function configureListFields(ListMapper $listMapper)
+  {
+    $listMapper
+      ->addIdentifier('name')
+      ->add('hex');
+  }
+}</pre>
+<h2>Enable the PDF export link on list page</h2>
+<p>In order to add the PDF export option the "getExportFormats" method needs to be overridden in the ColorAdmin class:</p>
+<pre class="lang:php decode:true">public function getExportFormats()
+{
+  return array_merge(parent::getExportFormats(), array('pdf'));
+}</pre>
+<p>The "pdf" options should now be displayed on the list page next to the default ones.</p>
+<h2>Create custom service to handle PDF export</h2>
+<p>First the default export service (identified by "sonata.admin.exporter") needs to be overriden. Register the service in src/Acme/DemoBundle/Resources/config/services.xml and make it aware of the knpSnappyPdf. Also the template engine will be necessary.</p>
+<pre class="lang:default decode:true"><service id="sonata.admin.exporter" class="Acme\DemoBundle\Export\Exporter">
+  <call method="setKnpSnappyPdf">
+    <argument type="service" id="knp.snappy_pdf" />
+  </call>
+  <call method="setTemplateEngine">
+    <argument type="service" id="templating" />
+  </call>
+</service></pre>
+<p>Next extend the Sonata exporter class as defined in the overridden exporter service:</p>
+<pre class="lang:php decode:true" title="src/Acme/DemoBundle/Export/Exporter.php">namespace Acme\DemoBundle\Export;
+
+use Exporter\Source\SourceIteratorInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Sonata\AdminBundle\Export\Exporter as BaseExporter;
+
+class Exporter extends BaseExporter
+{
+  protected $knpSnappyPdf;
+  protected $templateEngine;
+
+  public function getResponse($format, $filename, SourceIteratorInterface $source)
+  {
+    if ('pdf' != $format) {
+      return parent::getResponse($format, $filename, $source);
+    }
+
+    $html = $this->templateEngine->renderView('AcmeDemoBundle:Export:pdf.html.twig', array(
+      'source' => $source
+    ));
+    $content = $this->knpSnappyPdf->getOutputFromHtml($html);
+
+    return new Response($content, 200, array(
+      'Content-Type' => 'application/pdf',
+       'Content-Disposition' => sprintf('attachment; filename=%s', $filename)
+    ));
+  }
+
+  public function setKnpSnappyPdf($service)
+  {
+    $this->knpSnappyPdf = $service;
+  }
+
+  public function setTemplateEngine($service)
+  {
+    $this->templateEngine = $service;
+  }
+}</pre>
+<p>The last step is to add the Twig template used to render the PDF content, as specified in the custom exporter service. &nbsp;For example:</p>
+<pre class="lang:default decode:true" title="src/Acme/DemoBundle/Resources/views/Export/pdf.html.pdf"><table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>HEX</th>
+  </tr>
+  {% for elements in source %}
+    <tr>
+      {% for element in elements %}
+        <td>{{ element }}</td>
+      {% &amp;nbsp;endfor %}
+    </tr>
+  {% endfor %}
+</table></pre>
+<p>Of course, there is room for improvement. You can do it "SonataAdmin" way with a custom PdfWriter class (similar with the built-in XlsWriter, CsvWriter or JsonWriter) to separate the PDF conversion code, instead of having the entire process in the custom Exporter class.</p>

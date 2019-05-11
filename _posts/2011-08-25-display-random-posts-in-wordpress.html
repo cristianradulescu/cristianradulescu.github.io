@@ -1,0 +1,96 @@
+---
+layout: post
+status: publish
+published: true
+title: Display random posts in WordPress
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: WordPress posts may be randomly displayed using the "Get random results from
+  a MySql table" tip placed in a simple plugin. What this plugin does is to simply
+  ad the "RAND()" value to "ORDER BY" clause in the sql query which retrieves the
+  WordPress posts.
+wordpress_id: 303
+wordpress_url: http://cristian-radulescu.ro/?p=303
+date: '2011-08-25 14:30:50 +0300'
+date_gmt: '2011-08-25 12:30:50 +0300'
+categories:
+- Programming
+- MySQL
+- PHP
+- WordPress
+tags:
+- WordPress plugins
+- WordPress tips
+comments:
+- id: 745
+  author: sam2001
+  author_email: steven_mannion@blueyonder.co.uk
+  author_url: ''
+  date: '2011-09-09 00:52:40 +0300'
+  date_gmt: '2011-09-08 22:52:40 +0300'
+  content: I've been using the Rand code for a while now but i can't get it to work
+    with the latest version of wordpress (3.2.1) have you noticed this? do you have
+    any fixes or alternatives?
+- id: 746
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2011-09-09 07:25:35 +0300'
+  date_gmt: '2011-09-09 05:25:35 +0300'
+  content: '@sam2001 The random plugin works on my WordPress installation. Your issue
+    might be related with a WordPess cache plugin like <a href="http://wordpress.org/extend/plugins/wp-super-cache/"
+    target="_blank"  rel="nofollow">WP Super Chache</a>'
+- id: 8136
+  author: igor
+  author_email: igor.amatuzzi@gmail.com
+  author_url: ''
+  date: '2016-02-27 03:36:16 +0200'
+  date_gmt: '2016-02-27 00:36:16 +0200'
+  content: how do i upload it? im a begginer thanks!
+- id: 8139
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2016-03-01 16:53:32 +0200'
+  date_gmt: '2016-03-01 13:53:32 +0200'
+  content: "@igor: Just paste the code into a php file, then upload it via ftp to
+    the wp-content/plugins directory of your Wordpress installation."
+- id: 8658
+  author: Faithap
+  author_email: gskill@qq.com
+  author_url: http://www.faithap.com
+  date: '2017-07-27 15:32:16 +0300'
+  date_gmt: '2017-07-27 12:32:16 +0300'
+  content: Thanks you very much!!! it's working! :)
+---
+<p>WordPress posts may be randomly displayed using the "<a title="Get random results from a MySql table" href="http://cristian-radulescu.ro/article/get-random-results-from-a-mysql-table.html">Get random results from a MySql table</a>" tip placed in a simple plugin.</p>
+<p>What this plugin does is to simply add the "RAND()" value to "ORDER BY" clause in the sql query which retrieves the WordPress posts.</p>
+<pre class="lang:php decode:true ">/*
+ * Plugin Name: Randomize posts
+ * Plugin URI: http://cristian-radulescu.ro/article/display-random-posts-in-wordpress.html
+ * Description: Display random posts in WordPress.
+ * Author: Cristian Radulescu
+ * Version: 0.1
+ * Author URI: http://cristian-radulescu.ro
+ */
+
+/**
+ * Set the "ORDER BY" value to RAND()
+ *
+ * @param string $orderby
+ *
+ * @return string
+ */
+function rand_posts_orderby_request($orderby) {
+  return 'RAND()';
+}
+
+// add custom action to WordPres filters
+add_action('posts_orderby_request', 'rand_posts_orderby_request');</pre>
+<p>In order to use the plugin, just place the above code in a file, upload it to your WordPress plugins directory and activate it. If you use cache related plugins it may be necessary to disable them to view the randomized posts.</p>

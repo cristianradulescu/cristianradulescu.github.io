@@ -1,0 +1,56 @@
+---
+layout: post
+status: publish
+published: true
+title: Find all folders with same name in a directory tree and execute commands on
+  them
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: In a Linux CLI environment you can use the "find" command to search for files
+  or folder. In this tutorial I will explain how to find folders having the same name
+  in a directory tree and execute commands on them.
+wordpress_id: 143
+wordpress_url: http://cristian-radulescu.ro/?p=143
+date: '2009-10-11 15:57:03 +0300'
+date_gmt: '2009-10-11 13:57:03 +0300'
+categories:
+- Linux
+tags:
+- Linux
+- linux commands
+comments:
+- id: 853
+  author: Lecquio
+  author_email: nriquegarcia@telecable.es
+  author_url: http://gravatar.com/lecquio
+  date: '2012-12-03 19:30:00 +0200'
+  date_gmt: '2012-12-03 17:30:00 +0200'
+  content: "I use your commands to set 777 permisions to images folders in my webs:\r\nfind
+    . -name imagenes -type d | xargs chmod 777\r\n\r\nI use a different command to
+    remove .svn folders:\r\nfind . -name .svn -print0 | xargs -0 rm -rf\r\n\r\nThanks
+    a lot!"
+- id: 854
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2012-12-03 21:07:52 +0200'
+  date_gmt: '2012-12-03 19:07:52 +0200'
+  content: "@Lecquio why not `svn export` to remove .svn folders?"
+---
+<p>In a Linux CLI environment you can use the "find" command to search for files or folder. In this tutorial I will explain how to find folders having the same name in a directory tree and execute commands on them.</p>
+<p>Since the best way to learn is by example, let's consider the following scenario: a collection of images along with their corresponding thumbnails in directories named "thumbs"; so what you are trying to do is remove all "thumbs" directories from your images collection.</p>
+<p>The first step is to determine the path of the directory tree. Assuming that "/home/cristian/wallpapers" is the path you can execute the command by providing the entire path as parameter for the "find" command. If you are already in this directory you can use the dot "." instead of the path (the dot is the equivalent of the current directory).</p>
+<p>Now that you have the path, you need two more parameters for the find command - the name of the directories and the type. For the type you must use the letter "d" since this is how the "find" command will know that you want to search for a directory. For the name just provide "thumbs" since this is what we want to remove (see above scenario).</p>
+<p>So far the command is:</p>
+<p>[bash]find "/home/cristian/wallpapers" -name thumbs -type d[/bash]</p>
+<p>You found the directories, now pass this list to the deleting command with "xargs":</p>
+<p>[bash]find "/home/cristian/wallpapers" -name thumbs -type d | xargs rm -rf[/bash]</p>
+<p>If you need root permissions to delete the files just add the "sudo":</p>
+<p>[bash]find "/home/cristian/wallpapers" -name thumbs -type d | xargs sudo rm -rf[/bash]</p>
+<p>then enter your password.</p>

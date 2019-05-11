@@ -1,0 +1,66 @@
+---
+layout: post
+status: publish
+published: true
+title: Disk management in Linux
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: If you need to manage your disk or just check the disk space usage of a Linux
+  powered computer, here are some suggestions for both graphical and command line
+  interfaces.
+wordpress_id: 154
+wordpress_url: http://cristian-radulescu.ro/?p=154
+date: '2010-04-20 20:52:59 +0300'
+date_gmt: '2010-04-20 18:52:59 +0300'
+categories:
+- Software
+- Linux
+tags:
+- linux file system
+- cli
+- linux commands
+- disk management
+- disk space usage
+- disk partitioning
+comments:
+- id: 839
+  author: Kaustubh Ghanekar
+  author_email: ghanekar.kaustubh@gmail.com
+  author_url: http://kaustubhghanekar.blogspot.com
+  date: '2012-06-26 21:59:46 +0300'
+  date_gmt: '2012-06-26 19:59:46 +0300'
+  content: Nice post. CLI options can be more descriptive.
+- id: 840
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2012-06-26 22:08:49 +0300'
+  date_gmt: '2012-06-26 20:08:49 +0300'
+  content: '"man" command should do the trick for CLI options'
+- id: 860
+  author: efanutz
+  author_email: efanutz@gmail.com
+  author_url: http://efanutz.blogspot.ro
+  date: '2013-04-17 12:31:27 +0300'
+  date_gmt: '2013-04-17 10:31:27 +0300'
+  content: nice ! but you should  add some printscreens !
+---
+<p>If you need to manage your disk or just check the disk space usage of a Linux powered computer, here are some suggestions for both graphical and command line interfaces.</p>
+<h3>Desktop applications for disk management:</h3>
+<p><strong>File mangers</strong>: in a modern Linux desktop environment checking disk usage is a trivial task. The file managers, default ones like <a title="Nautilus file manager" href="http://live.gnome.org/Nautilus" target="_blank"><strong>Nautilus</strong></a> in <strong>Gnome</strong>, <a title="Dolphin file manager" href="http://dolphin.kde.org/" target="_blank"><strong>Dolphin</strong></a> in <strong>KDE</strong>,&nbsp; <a title="Thunar file manager" href="http://thunar.xfce.org/index.html" target="_blank"><strong>Thunar</strong></a> in <strong>XFCE</strong> or other popular file managers like <a title="Gnome Commander file manager" href="http://www.nongnu.org/gcmd/" target="_blank"><strong>Gnome Commander</strong></a>, <a title="Tux Commander file manager" href="http://tuxcmd.sourceforge.net/" target="_blank"><strong>Tux Commander</strong></a>, <a title="Krusader file manager" href="http://www.krusader.org/" target="_blank"><strong>Krusader</strong></a> can display disk space with just a few mouse clicks.</p>
+<p><a title="Gnome System Monitor" href="http://git.gnome.org/browse/gnome-system-monitor" target="_blank"><strong>Gnome System Monitor</strong></a> - has a "File Systems" tab which gives you a quick overview over your file systems in terms of mount points, file systems types (ext3, ext4, etc.), disk space.</p>
+<p><a title="KDiskFree disk utility" href="http://utils.kde.org/projects/kdf/" target="_blank"><strong>KDiskFree</strong></a> - similar with the Gnome System Monitor - File Systems, but since this is a part of the KDE desktop it might be preferred over the mentioned Gnome application.</p>
+<p><a title="Gnome Disk Utility" href="http://git.gnome.org/browse/gnome-disk-utility/" target="_blank"><strong>Gnome Disk Utility</strong></a> - this disk utility from <strong>RedHat</strong>, not only that it provides detailed information about the disk and <a title="S.M.A.R.T. data" href="http://en.wikipedia.org/wiki/S.M.A.R.T." target="_blank">S.M.A.R.T.</a> data, but also has options similar to a partitioning application (format, unmount, edit partition, etc.). It is included by default in Ubuntu.</p>
+<p><a title="GParted partition editor" href="http://gparted.sourceforge.net/" target="_blank"><strong>GParted</strong></a> - a full featured Gnome partition manager with a friendly user interface suited for about any disk management task. Has a live cd version called <a title="GParted live cd" href="http://gparted.sourceforge.net/livecd.php" target="_blank">GParted Live</a> which makes partitioning a breeze.</p>
+<h3>CLI applications for disk management:</h3>
+<p><strong>ls</strong> - the directory listing command, probably one of the most popular tool for both novice and experts; one of the best results is provided using the -<strong>alh</strong> parameters.</p>
+<p><strong>du</strong> - summarize disk usage for each file, recursively for directories. Use <strong>-h</strong> parameter for a human readable output of the size and <strong>-s </strong>parameter to summarize the disk usage of a directory instead of displaying the size of each file (helpful for directories with a large number of files/subdirectories). The <strong>--max-depth</strong> parameter also deserves to be mentioned.</p>
+<p><strong>df</strong> - can be defined as the CLI version of the Gnome System Monitor's "File System" tab previously mentioned. Like in the case of <strong>du</strong> command, use <strong>-h</strong> parameter for better readability.</p>
+<p><strong>fdisk</strong> - command line interface partition editor</p>
+<p><strong>cfdisk</strong> - same as <strong>fdisk</strong>, but with a more user-friendly interface</p>

@@ -1,0 +1,128 @@
+---
+layout: post
+status: publish
+published: true
+title: Remove spaces from an input field with JavaScript
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: This is a small snippet to remove the spaces from an input field using JavaScript.
+  It can be useful when you want a value without spaces, or when you want to replace
+  the spaces from the input field with other characters.
+wordpress_id: 127
+wordpress_url: http://cristian-radulescu.ro/?p=127
+date: '2008-12-10 23:31:27 +0200'
+date_gmt: '2008-12-10 21:31:27 +0200'
+categories:
+- Programming
+- JavaScript
+tags:
+- HTML
+- JavaScript
+- snippets
+comments:
+- id: 7
+  author: de musicas
+  author_email: ale.xandre17@bol.com.br
+  author_url: http://www.buscarletras.com.br/
+  date: '2008-12-13 02:15:57 +0200'
+  date_gmt: '2008-12-13 00:15:57 +0200'
+  content: very good Remove Spaces, Im From Brazil!
+- id: 816
+  author: Skweekah
+  author_email: skweekah@gmail.com
+  author_url: ''
+  date: '2012-03-21 02:26:47 +0200'
+  date_gmt: '2012-03-21 00:26:47 +0200'
+  content: Cool. It worked for me.
+- id: 842
+  author: Matt Smith (@mattsmith24)
+  author_email: mattsmith24@twitter.example.com
+  author_url: http://twitter.com/mattsmith24
+  date: '2012-07-03 16:51:35 +0300'
+  date_gmt: '2012-07-03 14:51:35 +0300'
+  content: I must have searched through a hundred sites on Google for this, and yours
+    is the only one that actually worked. THANK YOU. (P.s. onKeyUp works quite nicely
+    too)
+- id: 846
+  author: Daniel
+  author_email: danilklim@rambler.ru
+  author_url: http://itellfinance.com
+  date: '2012-10-07 21:30:30 +0300'
+  date_gmt: '2012-10-07 19:30:30 +0300'
+  content: Thank you for this, easy and working
+- id: 848
+  author: Giovka
+  author_email: giovkanata@yandex.ru
+  author_url: ''
+  date: '2012-10-27 16:51:26 +0300'
+  date_gmt: '2012-10-27 14:51:26 +0300'
+  content: "Thank you, works good, but unfortunately not removes the space when it's
+    at the end of a string (for example: if you not remove the space at the end of
+    an email address, this will not valid for the regex that checks the field.\r\nI'm
+    a beginner with the regex, someone know how to do that?"
+- id: 849
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2012-10-27 17:25:20 +0300'
+  date_gmt: '2012-10-27 15:25:20 +0300'
+  content: "@Giovka looks like you want to trim the value, this could help http://www.whadiz.com/what-is.aspx/programming/javascript/javascript-trim"
+- id: 865
+  author: thankful
+  author_email: poty@hot.com
+  author_url: ''
+  date: '2013-10-05 20:06:37 +0300'
+  date_gmt: '2013-10-05 18:06:37 +0300'
+  content: God bless you, this is perfect
+- id: 869
+  author: ಶ್ರೀಪತಿ ಗೋಗಡಿಗೆ
+  author_email: pisumathu@gmail.com
+  author_url: https://www.facebook.com/pisumathu
+  date: '2013-11-20 16:34:44 +0200'
+  date_gmt: '2013-11-20 14:34:44 +0200'
+  content: nice script, helped me
+- id: 7511
+  author: ravi
+  author_email: ravikant.sonare@techvalens.com
+  author_url: ''
+  date: '2015-09-11 14:39:42 +0300'
+  date_gmt: '2015-09-11 11:39:42 +0300'
+  content: Not Working
+- id: 7583
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2015-09-23 18:56:20 +0300'
+  date_gmt: '2015-09-23 15:56:20 +0300'
+  content: "@ravi: There was an error with the code formating. Should be ok now."
+- id: 8153
+  author: me
+  author_email: cc@yahoo.fr
+  author_url: ''
+  date: '2016-03-08 12:17:14 +0200'
+  date_gmt: '2016-03-08 09:17:14 +0200'
+  content: thanks man very helpful
+- id: 8660
+  author: Sree
+  author_email: gaddam.sreelatha@gmail.com
+  author_url: ''
+  date: '2017-08-17 01:30:27 +0300'
+  date_gmt: '2017-08-16 22:30:27 +0300'
+  content: does not allow to modify the pasted text on to the input text box
+---
+<h3>This is a small snippet to remove the spaces from an input field using JavaScript. It can be useful when you want a value without spaces, or when you want to replace the spaces from the input field with other characters.</h3>
+<h4>The JavaScript code:</h4>
+<pre class="lang:js decode:true" title="Strip spaces function">function stripspaces(input)
+{
+  input.value = input.value.replace(/\s/gi,"");
+  return true;
+}</pre>
+<h4>The input field:</h4>
+<pre class="lang:default decode:true"><input onkeydown="javascript:stripspaces(this)" name="field_with_no_spaces" type="text" /></pre>
+<p>The spaces will be stripped from the input field in real-time, as the user types.</p>

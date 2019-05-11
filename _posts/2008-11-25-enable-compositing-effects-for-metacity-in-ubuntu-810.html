@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: Enable compositing effects for metacity in Ubuntu
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: Desktop effects in Ubuntu 8.10 can be used without Compiz, by enabling compositing
+  in Metacity - the Gnome's default window manager.
+wordpress_id: 115
+wordpress_url: http://cristian-radulescu.ro/?p=115
+date: '2008-11-25 22:21:43 +0200'
+date_gmt: '2008-11-25 20:21:43 +0200'
+categories:
+- Linux
+- Ubuntu
+tags:
+- Compiz
+- desktop effects
+- Metacity
+comments:
+- id: 9
+  author: Sekhmet
+  author_email: sekhmet@gmx.at
+  author_url: ''
+  date: '2009-02-24 15:39:54 +0200'
+  date_gmt: '2009-02-24 13:39:54 +0200'
+  content: Thanks a lot, that was exactly what I needed to activate the visual Effects
+    for Gnome-do docky
+---
+<h3>Desktop effects in Ubuntu can be used without Compiz, by enabling compositing in Metacity - the Gnome's default window manager.</h3>
+<p>There are more ways to enable compositing in Metacity, but first you need to disable Compiz if you are using it. The fastest way is to go to <strong>System->Preferences->Appearance</strong>, select the <strong>Visual Effects</strong> tab, then check the radio button <strong>None</strong>.</p>
+<ul>
+<li><strong>CLI way to enable compositing effects</strong>: open a terminal and type:</li>
+</ul>
+<p>[bash]gconftool-2 -s '/apps/metacity/general/compositing_manager' --type bool true[/bash]</p>
+<ul>
+<li><strong>GUI way to enable compositing effects</strong>: open the <strong>Configuration Editor</strong> (gconf-editor), go to <strong>apps->metacity->general</strong> and enable the checkbox <strong>compositing_manager</strong>.</li>
+</ul>
+<p>Although&nbsp; Metacity is much smoother, the effects are minimal - just some shadows on windows and menus, windows preview for Alt+Tab.</p>

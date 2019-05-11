@@ -1,0 +1,120 @@
+---
+layout: post
+status: publish
+published: true
+title: Fix NetBeans big fonts on Ubuntu
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: There is a rather annoying issue related with NetBeans displaying large fonts
+  on Ubuntu for menus and panels. There are some suggestions on Ubuntu forums related
+  with java fonts settings, but there are a couple of better solutions which may improve
+  the way NetBeans looks on Ubuntu when it comes to font size.
+wordpress_id: 255
+wordpress_url: http://cristian-radulescu.ro/?p=255
+date: '2011-05-28 22:41:02 +0300'
+date_gmt: '2011-05-28 20:41:02 +0300'
+categories:
+- Ubuntu
+- NetBeans
+tags:
+- tips and tricks
+- fonts
+- Nimbus
+comments:
+- id: 714
+  author: simetrico
+  author_email: yosimetrico@gmail.com
+  author_url: ''
+  date: '2011-07-09 01:34:45 +0300'
+  date_gmt: '2011-07-08 23:34:45 +0300'
+  content: Thanks, a lot nicer with Nimbus plus font 10.
+- id: 783
+  author: David
+  author_email: rabbit.editor@yahoo.com
+  author_url: ''
+  date: '2011-11-01 17:29:01 +0200'
+  date_gmt: '2011-11-01 15:29:01 +0200'
+  content: The above solution doesn't work under Ubuntu 11.10 for some reason. While
+    the size of the font is changed, it's the menu items that aren't highlighted that
+    look terrible.
+- id: 789
+  author: Sander
+  author_email: adversus@hotmail.com
+  author_url: ''
+  date: '2011-12-18 18:06:26 +0200'
+  date_gmt: '2011-12-18 16:06:26 +0200'
+  content: "I had to (on Ubuntu 11.04) reduce the font size to 9 to get nice font
+    results. Note that I had to restart netbeans to make font changes take effect,
+    unlike for other applications. \r\n\r\nAlso tried to \"Nimbus look and feel\",
+    yikes!"
+- id: 790
+  author: Cristian Radulescu
+  author_email: cristian67@gmail.com
+  author_url: http://cristian-radulescu.ro
+  date: '2011-12-18 18:13:38 +0200'
+  date_gmt: '2011-12-18 16:13:38 +0200'
+  content: "Indeed, reducing the font size might be a better alternative than using
+    \"Nimbus\", but on smaller screens (even 15\") smaller fonts are hard to read.\r\n\r\nSince
+    I don't like Unity or Gnome3,  I'm using Xfce now and for some reason I no longer
+    have the fonts issue on Xubuntu 11.10."
+- id: 793
+  author: Moritz Winter
+  author_email: winter.moritz@gmx.de
+  author_url: http://wintersolutions.de
+  date: '2012-01-21 14:50:35 +0200'
+  date_gmt: '2012-01-21 12:50:35 +0200'
+  content: "Thanks alot, this was really helpful!\r\n\r\nP.S. On Ubuntu 11.10 (Unity
+    3D) do 'sudo apt-get install gnome-tweak-tool' and change the fonts there."
+- id: 841
+  author: peter
+  author_email: peter@test.com
+  author_url: ''
+  date: '2012-06-28 19:42:32 +0300'
+  date_gmt: '2012-06-28 17:42:32 +0300'
+  content: "Netbeans does not have something like \"look and feel\". It has only more
+    or less of \"ugliness\". Stupid shit.\r\n\r\nFortunately, Nimbus trick works.
+    I have tried thousands of tweaks. Prick, who created Netbeans installer and config
+    for linux, should be stabbed in both eyes with heavy camping equipment."
+- id: 847
+  author: sava
+  author_email: test@mailinator.com
+  author_url: http://gravatar.com/alonproductowl
+  date: '2012-10-19 09:19:22 +0300'
+  date_gmt: '2012-10-19 07:19:22 +0300'
+  content: Thanks!
+- id: 863
+  author: Memux
+  author_email: memux@dispostable.com
+  author_url: ''
+  date: '2013-05-31 20:57:37 +0300'
+  date_gmt: '2013-05-31 18:57:37 +0300'
+  content: Great!
+- id: 864
+  author: Jeremiah Mbaria
+  author_email: mbaria.jeremiah@gmail.com
+  author_url: https://plus.google.com/106800931563886758622
+  date: '2013-10-01 13:49:16 +0300'
+  date_gmt: '2013-10-01 11:49:16 +0300'
+  content: Nice, it worked for me too.
+---
+<p>There is a rather annoying issue related with <a title="NetBeans" href="http://netbeans.org/" target="_blank">NetBeans</a> displaying large fonts on Ubuntu for menus and panels. There are some suggestions on Ubuntu forums related with java fonts settings, but there are a couple of better solutions which may improve the way NetBeans looks on Ubuntu when it comes to font size.</p>
+<p>The default Netbeans look and feel on Ubuntu looks like this:</p>
+<p>[caption id="attachment_257" align="aligncenter" width="566" caption="NetBeans default look and Feel on Ubuntu"]<a href="http://cristian-radulescu.ro/wp-content/uploads/2011/05/NetBeans_Ubuntu_default_look_and_feel.png"><img class="size-full wp-image-257         " title="NetBeans_Ubuntu_default_look_and_feel" src="http://cristian-radulescu.ro/wp-content/uploads/2011/05/NetBeans_Ubuntu_default_look_and_feel.png" alt="" width="566" height="393" /></a>[/caption]</p>
+<p style="text-align: center;">The integration with the default theme is great, except for the large fonts.</p>
+<h3>Lower the application font</h3>
+<p>The first solution consist in lowering the font used for applications. By default Ubuntu is using for applications the <a title="Ubuntu font family" href="http://font.ubuntu.com/" target="_blank">Ubuntu font family</a> with a size of 11. Go to the "Fonts" tab on "Appearance Preferences" window (right-click on Desktop, select "Change Desktop Background") and set the "Application" font (highlighted in below image) to 10.</p>
+<p>[caption id="attachment_261" align="aligncenter" width="361" caption="Appearance Preferences"]<a href="http://cristian-radulescu.ro/wp-content/uploads/2011/05/Ubuntu-Appearance-Preferences.png"><img class="size-full wp-image-261   " title="Ubuntu-Appearance Preferences" src="http://cristian-radulescu.ro/wp-content/uploads/2011/05/Ubuntu-Appearance-Preferences.png" alt="" width="361" height="158" /></a>[/caption]</p>
+<p>The fonts should be better now in NetBeans, but the downside is that all your applications' fonts will be smaller. If you can live with that, great! If not, here goes another solution.</p>
+<h3>Use the Nimbus look and feel</h3>
+<p>The second solution is using the java <a title="Nimbus look and feel" href="http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/nimbus.html" target="_blank">Nimbus look and feel</a>. Nimbus may be best described as a skin for java applications, thus this tip applies not only to NetBeans, but to other java applications as well.</p>
+<p>In order to specify the look and feel, edit the "netbeans.conf" file (usually the file is placed in <em>"<netbeans_installation_directory>/etc/"</em>), find the "netbeans_default_options" option and insert the following values right before the last quote:</p>
+<p>[text] --laf Nimbus -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd[/text]</p>
+<p>With the Nimbus skin, Netbeans should look likw this:</p>
+<p style="text-align: center;"><a href="http://cristian-radulescu.ro/wp-content/uploads/2011/05/NetBeans_Ubuntu_Nimbus_look_and_feel.png"><img class="aligncenter size-full wp-image-258" title="NetBeans_Ubuntu_Nimbus_look_and_feel" src="http://cristian-radulescu.ro/wp-content/uploads/2011/05/NetBeans_Ubuntu_Nimbus_look_and_feel.png" alt="" width="539" height="374" /></a></p>
+<p>Nimbus look and feel tip thanks to <a title="Geertjan's blog" href="http://blogs.oracle.com/geertjan/entry/enhance_netbeans_platform_appearance_without" target="_blank">Geertjan's Blog</a></p>

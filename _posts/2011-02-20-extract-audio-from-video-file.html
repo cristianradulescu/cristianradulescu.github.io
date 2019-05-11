@@ -1,0 +1,47 @@
+---
+layout: post
+status: publish
+published: true
+title: Extract audio from video file
+author:
+  display_name: Cristian Radulescu
+  login: cristian.radulescu
+  email: cristian67@gmail.com
+  url: http://cristian-radulescu.ro
+author_login: cristian.radulescu
+author_email: cristian67@gmail.com
+author_url: http://cristian-radulescu.ro
+excerpt: Since there are so many tools (Minitube, youtube-dl) which allows you to
+  download video files from YouTube or other video sharing sites, let's go one step
+  further and extract the sound from the downloaded video file to a mp3 file. The
+  FFmpeg tool will do the trick just fine
+wordpress_id: 231
+wordpress_url: http://cristian-radulescu.ro/?p=231
+date: '2011-02-20 16:53:55 +0200'
+date_gmt: '2011-02-20 14:53:55 +0200'
+categories:
+- Linux
+- Multimedia
+- Video
+- Audio
+tags:
+- Linux
+- tips and tricks
+- tutorial
+- ffmpeg
+- video
+- audio
+comments:
+- id: 6102
+  author: resh
+  author_email: shrey9469@gmail.com
+  author_url: ''
+  date: '2015-04-02 15:31:20 +0300'
+  date_gmt: '2015-04-02 13:31:20 +0300'
+  content: Could you please tell me how i can do the same in python
+---
+<p>Since there are so many tools (<a title="Minitube" href="http://flavio.tordini.org/minitube" target="_blank">Minitube</a>, <a title="youtube-dl" href="http://rg3.github.com/youtube-dl/" target="_blank">youtube-dl</a>) which allows you to download video files from YouTube or other video sharing sites, let's go one step further and extract the sound from the downloaded video file to a mp3 file.</p>
+<p>The&nbsp;<a style="font-weight: bold;" title="FFmpeg" href="http://www.ffmpeg.org/" target="_blank">FFmpeg</a> tool will do the trick just fine. Thus assuming that you have the video file "My Video File.mp4" and you want to extract &nbsp;the sound into "My Sound File.mp3 " use the following command:</p>
+<p>[bash]ffmpeg -i "My Video File.mp4" &nbsp;-ab 128 "My Video File.mp3"[/bash]</p>
+<p>With the "-ab 128" parameter you specify that the audio bitrate should be 128k. Additionally the "-ar" parameter may be used for the audio sampling frequency but by default it is set to 44100, which should be ok.</p>
+<p>On Ubuntu it may be necessary to add the <a title="Medibuntu repository" href="http://medibuntu.org/repository.php" target="_blank">Medibuntu repository</a> and install the <em>libmp3lame</em> codec. For <strong>FFmpeg</strong> the audio codec can be specified using the parameter "-acodec".</p>
