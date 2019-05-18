@@ -27,7 +27,7 @@ repository: cristianradulescu/cristianradulescu.github.io
 # Build settings
 markdown: kramdown
 #theme: minima
-theme: jekyll-theme-cayman
+theme: jekyll-theme-hacker
 plugins:
   #- jekyll-feeds
 
