@@ -1,0 +1,17 @@
+---
+layout: post
+status: publish
+published: true
+title: Remove blank lines from a textarea using Prototype
+author: Cristian Radulescu
+excerpt: Here is a Javascript function used to remove blank lines from a textarea...
+date: '2009-02-18 00:03:22 +0200'
+date_gmt: '2009-02-17 22:03:22 +0200'
+---
+<p>Here is a JavaScript function used to remove blank lines from a textarea. This snippet is using the <a title="Prototype JS" href="http://www.prototypejs.org/" target="_blank">Prototype JavaScript framework</a></p>
+<p>[javascript]function removeBlankLines(field)<br />
+{<br />
+  $(field).value=$(field).value.gsub(/\s+/, '\r\n');<br />
+}[/javascript]</p>
+<p>You can use it with "onblur" attribute:</p>
+<p>[html]<textarea id="some_text"></textarea>[/html]</p>

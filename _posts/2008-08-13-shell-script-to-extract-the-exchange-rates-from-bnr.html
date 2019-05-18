@@ -1,0 +1,30 @@
+---
+layout: post
+status: publish
+published: true
+title: Shell script to extract the exchange rates from BNR (Romania)
+author: Cristian Radulescu
+excerpt: Here is a simple script to get the exchange rates.
+date: '2008-08-13 19:59:42 +0300'
+date_gmt: '2008-08-13 19:59:42 +0300'
+---
+<h3>Here is a simple script to get the exchange rates from  <a name="BNR echange rates"></a></h3>
+<p>[bash]#!/bin/bash<br />
+# clear the screen<br />
+clear<br />
+# display an info message<br />
+echo "+------------------------------+"<br />
+echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BNR exchange        &nbsp;&nbsp;|"<br />
+echo "+------------------------------+"<br />
+# check for parameters<br />
+if [ $# -ne 1 ]<br />
+  then<br />
+    echo "Usage: $0 eur&nbsp; or&nbsp; $0 usd"<br />
+  else<br />
+    # convert parameter to upper case<br />
+    CURRENCY=$(echo $1 | tr '[:lower:]' '[:upper:]')<br />
+    # execute the extraction<br />
+    RON=$(lynx -source http://www.bnro.ro/nbrfxrates.xml | grep $CURRENCY | cut -c25-30)<br />
+   echo "1 $CURRNECY = $RON RON"<br />
+fi[/bash]</p>
+<p>More details about running a shell script on <a title="How to create a simple shell script" href="http://cristian-radulescu.ro/article/how-to-create-a-simple-shell-script.html">How to create a simple shell script </a> and <a title="Understanding file permissions and ownership on Linux " href="http://cristian-radulescu.ro/article/understanding-file-permissions-and-ownership-on-linux.html">Understanding file permissions and ownership on Linux </a>.</p>

@@ -1,0 +1,19 @@
+---
+layout: post
+status: publish
+published: true
+title: Get random results from a MySql table
+author: Cristian Radulescu
+excerpt: It is possible to retrieve random results from a MySql table using the RAND()
+  mathematical function. In order to get the random results the RAND() function needs
+  to be used in the ORDER BY clause.
+date: '2011-08-20 13:52:50 +0300'
+date_gmt: '2011-08-20 11:52:50 +0300'
+---
+<p>It is possible to retrieve random results from a MySql table using the <a title="MySql RAND() reference" href="http://dev.mysql.com/doc/refman/5.1/en/mathematical-functions.html#function_rand" target="_blank" rel="noopener">RAND()</a>&nbsp;mathematical function.</p>
+<p>In order to get the random results, the RAND() function should be&nbsp;used in the <strong>ORDER BY</strong>&nbsp;clause, like in the example below:</p>
+{% highlight sql %}
+-- Get random results
+SELECT * FROM `my_table` ORDER BY RAND();
+{% endhighlight %}
+<p>Retrieving random results directly from MySql is useful since you don't need another step in your application in order to manually randomize the sql results. For example if the sql results are retrieved without being randomized you need to use a "<a title="shuffle PHP function reference" href="http://php.net/manual/en/function.shuffle.php" target="_blank" rel="noopener">shuffle</a>" like function to get random results in PHP.</p>

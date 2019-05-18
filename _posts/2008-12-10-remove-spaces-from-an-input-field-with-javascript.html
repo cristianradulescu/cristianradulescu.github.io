@@ -1,0 +1,22 @@
+---
+layout: post
+status: publish
+published: true
+title: Remove spaces from an input field with JavaScript
+author: Cristian Radulescu
+excerpt: This is a small snippet to remove the spaces from an input field using JavaScript.
+  It can be useful when you want a value without spaces, or when you want to replace
+  the spaces from the input field with other characters.
+date: '2008-12-10 23:31:27 +0200'
+date_gmt: '2008-12-10 21:31:27 +0200'
+---
+<h3>This is a small snippet to remove the spaces from an input field using JavaScript. It can be useful when you want a value without spaces, or when you want to replace the spaces from the input field with other characters.</h3>
+<h4>The JavaScript code:</h4>
+<pre class="lang:js decode:true" title="Strip spaces function">function stripspaces(input)
+{
+  input.value = input.value.replace(/\s/gi,"");
+  return true;
+}</pre>
+<h4>The input field:</h4>
+<pre class="lang:default decode:true"><input onkeydown="javascript:stripspaces(this)" name="field_with_no_spaces" type="text" /></pre>
+<p>The spaces will be stripped from the input field in real-time, as the user types.</p>

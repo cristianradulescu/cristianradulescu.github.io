@@ -1,0 +1,21 @@
+---
+layout: post
+status: publish
+published: true
+title: Internet Explorer bug - duplicate characters
+author: Cristian Radulescu
+excerpt: One of Internet Explorer versions 6 and 7 bugs, consists in repeating (duplicating)
+  some characters from the end of some elements with the CSS atribute float.
+date: '2008-03-02 04:12:44 +0200'
+date_gmt: '2008-03-02 04:12:44 +0200'
+---
+<h3>One of Internet Explorer versions 6 and 7 bugs, consists in repeating (duplicating) some characters from the end of some elements with the CSS atribute - <em>float</em>.</h3>
+<h3>What's triggering this bug:</h3>
+<ul>
+<li>Using HTML comments inserted between the elemens with the <em>float</em> attribute.</li>
+<li>Hidden elements using <em>display: none</em></li>
+</ul>
+<h3>Solutions to prevent the duplication of the characters:</h3>
+<p>Using conditional comments:</p>
+<p>[html]<!--[if !IE]> comments here <![endif]-->[/html]</p>
+<p>Another solution - you can set for the last element with <em>float: left</em>, the right margin at -3px (<em>margin-right: -3px</em>), and -3px for the left margin of the elements with <em>float: right</em>. Also you can set the width of the first div with 3px larger than the width of the last element with <em>float</em>.</p>

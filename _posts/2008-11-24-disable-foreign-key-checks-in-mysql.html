@@ -1,0 +1,17 @@
+---
+layout: post
+status: publish
+published: true
+title: Disable foreign key checks in MySQL
+author: Cristian Radulescu
+excerpt: Disabling foreign key checks in MySQL is usefull when you are dealing with
+  tables that use foreign keys (InnoDB engine).
+date: '2008-11-24 22:47:44 +0200'
+date_gmt: '2008-11-24 20:47:44 +0200'
+---
+<p><strong>Disabling foreign key checks in MySQL</strong> is usefull when you are dealing with tables that use foreign keys (InnoDB engine).</p>
+<p>You can not delete (drop) multiple tables, a parent table or a child table until you <strong>disable foreign key checks</strong> four your current database.</p>
+<p>The sql command to <strong>disable foreign key checks</strong> is:</p>
+<p>[sql]SET FOREIGN_KEY_CHECKS = 0;[/sql]</p>
+<p>To &nbsp;<strong>enable the foreign key checks</strong> use the opposite command:</p>
+<p>[sql]SET FOREIGN_KEY_CHECKS = 1;[/sql]</p>

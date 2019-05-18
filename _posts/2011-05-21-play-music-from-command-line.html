@@ -1,0 +1,24 @@
+---
+layout: post
+status: publish
+published: true
+title: Play music from command line
+author: Cristian Radulescu
+excerpt: 'Although there are a lot of GUI media players out there, it is also possible
+  to listen to your favorite music from the command line.  The mpg123 tool allows
+  you to play a song, a playlist or even a stream and has all major features of a
+  GUI media player: control keys, equalizer, replay gain, gapless playback.  '
+date: '2011-05-21 22:20:19 +0300'
+date_gmt: '2011-05-21 20:20:19 +0300'
+---
+<p>Although there are a lot of GUI media players out there, it is also possible to listen to your favorite music from the command line.&nbsp; The <a title="mpeg123" href="http://www.mpg123.de/" target="_blank">mpg123</a> tool allows you to play a song, a playlist or even a stream and has all major features of a GUI media player: control keys, equalizer, replay gain, gapless playback.</p>
+<p>Some well known supported audio interfaces are ALSA (Advanced Linux Sound Architecture), JACK (Jack Audio Connection Kit), OSS (Open Sound System), PulseAudio (sound server for POSIX and Win32), Win32 (Windows WaveOut).</p>
+<p>The decoder part of mpg123 may be used as a library in other applications.</p>
+<h3>Usage examples:</h3>
+<p>Use the "-v" option to increase verbosity level and display detailed info. Also use quotes for files with spaces in their names.</p>
+<p>Play audio file from local storage:</p>
+<p>[bash light="true"]mpg123 -v "Music/Ugly Kid Joe - Cats in the Cradle.mp3"[/bash]</p>
+<p>Play stream, just like local files; provided stream is "borrowed" from <a title="SoundCloud" href="http://soundcloud.com/" target="_blank">SoundCloud</a>, thus might not be available anymore:</p>
+<p>[bash light="true"]mpg123 -v http://media.soundcloud.com/stream/PHn5m1zDrhV2?stream_token=chpdF[/bash]</p>
+<p>Play a remote or local playlist using the "-@" parameter, to read filenames from playlist:</p>
+<p>[bash autolinks="false" light="true"]mpg123 -v -@ http://www.netrock101.com/live365.m3u[/bash]</p>

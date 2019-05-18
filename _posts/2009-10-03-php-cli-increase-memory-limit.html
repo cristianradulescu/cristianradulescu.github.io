@@ -1,0 +1,18 @@
+---
+layout: post
+status: publish
+published: true
+title: PHP CLI increase memory limit
+author: Cristian Radulescu
+excerpt: When running a PHP script from command line interface (CLI), a higher memory
+  limit may be required in order for the script to be successfully executed. This
+  can be achieved using the "-d" or "--define" option in the command
+date: '2009-10-03 17:55:01 +0300'
+date_gmt: '2009-10-03 15:55:01 +0300'
+---
+<p><a href="http://www.php.net"><img class="size-full wp-image-138 alignleft" style="border: 0pt none; margin: 10px;" title="PHP logo" src="http://cristian-radulescu.ro/wp-content/uploads/2009/10/php.gif" alt="PHP logo" width="120" height="67" /></a></p>
+<p>When running a PHP script from <a title="Using PHP from command line interface" href="http://www.php.net/manual/en/features.commandline.php" target="_blank" rel="noopener">command line interface</a> (CLI), a higher memory limit may be required in order for the script to be successfully executed. This can be achieved using the "<strong>-d</strong>" or "<strong>--define</strong>" option in the command. According to the manual:</p>
+<blockquote><p>This option allows you to set a custom value for any of the configuration directives allowed in php.ini.</p></blockquote>
+<p>An example of running a PHP script in CLI with custom memory limit:</p>
+<pre class="theme:terminal lang:sh decode:true" title="Command">php -d memory_limit=128M my_script.php</pre>
+<p>Of course the "<strong>-d</strong>" or "<strong>--define</strong>" option is not limited to the memory limit directive; it can be use to alter other php.ini directives as well.</p>

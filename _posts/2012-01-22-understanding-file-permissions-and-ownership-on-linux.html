@@ -1,0 +1,86 @@
+---
+layout: post
+status: publish
+published: true
+title: Understanding file permissions and ownership on Linux
+author: Cristian Radulescu
+excerpt: The files on a Linux system can have reading permissions, writing permissions,
+  executing (running) permissions or no permissions for the user that owns that files,
+  groups of users or the rest - users who does not own that files and they are not
+  members of any group.
+date: '2012-01-22 23:44:00 +0200'
+date_gmt: '2012-01-22 21:44:00 +0200'
+---
+<h3>The files on a Linux system can have <em>reading permissions, writing permissions, executing (running) permissions or no permissions</em> for <em>the user that owns that files</em>, <em>groups of users</em> or the rest - <em>users who does not own that files and they are not members of any group</em>.</h3>
+<h3>The usual file types are:</h3>
+<ul>
+<li><em>Directory</em> - associated symbol <strong>d</strong></li>
+<li><em>Normal file</em> - associated symbol <strong>-</strong> (minus, dash)</li>
+<li><em>Symbolic link (symlink)</em> (like a shortcut on Windows) - associated symbol <strong>l</strong></li>
+</ul>
+<h3>Permission types:</h3>
+<ul>
+<li><em>Reading</em> - associated symbol <strong>r</strong>, or number <strong>4</strong></li>
+<li>Writing - associated symbol <strong>w</strong>, or number <strong>2</strong></li>
+<li><em>Executing (running)</em> - associated symbol <strong>x</strong>, or number <strong>1</strong></li>
+<li><em>No permission</em> - associated symbol <strong>-</strong>, or number <strong>0</strong></li>
+</ul>
+<p>If a file has the <strong>reading permission</strong> you can open the file and read it, but you can not change the content. If a directory has the <strong>reading permission</strong> you can read the files in that directory, but you are not allowed to change their content.</p>
+<p>If a file has the <strong>writing permission</strong> you can open the file for reading and for writing (you can change the file's content and save it with the new content). You can not <strong>delete</strong> or <strong>rename</strong> a file unless the directory has the <strong>writing permission.</strong></p>
+<p>The <strong>execution permission</strong> allows the user to execute (run) the file (like a <a title="Shell script" href="http://cristian-radulescu.ro/article/how-to-create-a-simple-shell-script.html" target="_blank">shell script</a>).</p>
+<h3>User types:</h3>
+<ul>
+<li><strong>User</strong> - the user name of the owner of the file or directory; if a user creates a file or directory it becomes the owner of that file of directory.</li>
+<li><strong>Group</strong> - a group of users (ftp, mysql), all group members have the same rights for the file or directory.</li>
+<li><strong>Other</strong> - all users that do not own the file or directory and they do not belong to any group that has right for the file or directory.</li>
+</ul>
+<h3>Setting permissions:</h3>
+<p>You can set the permissions using the <strong><a title="CHMOD reference" href="http://tldp.org/LDP/abs/html/basic.html#CHMODREF" target="_blank">chmod</a></strong> command. There two methods for changing file permissions:</p>
+<ul>
+<li><strong>Symbolic mode</strong></li>
+<li><strong>Numeric mode</strong></li>
+</ul>
+<h3>Symbolic mode</h3>
+<p>Setting the permissions is made using the associated symbols - <strong>rwx</strong>.</p>
+<p>Actions are defined using mathematical symbols: the <strong>+ (plus)</strong> symbol is used to <strong>add a permission</strong>, the <strong>- (minus)</strong> symbol is used to <strong>remove a permission</strong>, and the <strong>= (equal)</strong> symbol is used to <strong>remove the old permission and set a new one</strong>.</p>
+<p>For the owners, associated symbols are <strong>u</strong> for <strong>user</strong>, <strong>g</strong> for <strong>group</strong>, <strong>o</strong> for <strong>others (the rest)</strong> and <strong>a</strong> for <strong>all</strong>.</p>
+<p>To make a file executable type in a console:</p>
+<p>[bash]chmod +x myfile[/bash]</p>
+<p>To remove the write permissions of the group:</p>
+<p>[bash]chmod g-w myfile[/bash]</p>
+<h3>Numeric mode</h3>
+<p>Instead of symbols, the <strong>associated number</strong> are used for setting permissions. The number for each owner will be the sum of the permissions for that owner.</p>
+<p>To set the reading, writing and execution rights for the user you use the number 7 (4+2+1); to set the reading and writing rights for group will you use the number 6 (4+2); the reading permission for the rest (others) will be set using number 4.</p>
+<p>The command for setting the permissions in numeric mode:</p>
+<p>[bash]chmod 764 myfile[/bash]</p>
+<h3>Here is the association between numbers and letters:</h3>
+{% highlight php %}
+0  |  ---
+1  |  --x
+2  |  -w-
+3  |  -wx
+4  |  r--
+5  |  r-x
+6  |  rw-
+7  |  rwx
+{% endhighlight %}
+<h3>Changing the owner:</h3>
+<p>It is done using the command <strong>chown</strong>.</p>
+<p>To change <strong>the owner</strong>:</p>
+{% highlight bash %}
+chown myusername myfile
+{% endhighlight %}
+<p>To change <strong>the group and the owner</strong>:</p>
+{% highlight bash %}
+chown mygroup:myowner myfile
+{% endhighlight %}
+<p>To <strong>change only the group</strong> you use the command <strong><a title="CHGRP reference" href="http://tldp.org/LDP/intro-linux/html/sect_03_04.html#sect_03_04_02_04" target="_blank">chgrp</a></strong>:</p>
+{% highlight bash %}
+chgrp group myfile
+{% endhighlight %}
+<h3>Video tutorial</h3>
+<p>Check also a video tutorial about <a title="Unix File Permissions and Ownership (CHOWN, CHMOD, ETC)" href="http://www.irongeek.com/i.php?page=videos%2Funix-file-permissions-and-ownership-chown-chmod-etc" target="_blank">Unix File Permissions and Ownership (CHOWN, CHMOD, ETC)</a> via <a title="Irongeek.com" href="http://www.irongeek.com/" target="_blank">Irongeek.com</a>:</p>
+<p>http://www.youtube.com/watch?v=SWZj0gLhFL4</p>
+<p><strong>References:</strong><br />
+<a href="http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/file-permissions.html" target="_blank">TLDP.org</a><br />
+<a href="http://www.tuxfiles.org/linuxhelp/filepermissions.html" target="_blank">TUXfiles.org</a></p>

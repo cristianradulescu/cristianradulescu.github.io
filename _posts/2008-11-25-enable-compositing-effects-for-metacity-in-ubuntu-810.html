@@ -1,0 +1,21 @@
+---
+layout: post
+status: publish
+published: true
+title: Enable compositing effects for metacity in Ubuntu
+author: Cristian Radulescu
+excerpt: Desktop effects in Ubuntu 8.10 can be used without Compiz, by enabling compositing
+  in Metacity - the Gnome's default window manager.
+date: '2008-11-25 22:21:43 +0200'
+date_gmt: '2008-11-25 20:21:43 +0200'
+---
+<h3>Desktop effects in Ubuntu can be used without Compiz, by enabling compositing in Metacity - the Gnome's default window manager.</h3>
+<p>There are more ways to enable compositing in Metacity, but first you need to disable Compiz if you are using it. The fastest way is to go to <strong>System->Preferences->Appearance</strong>, select the <strong>Visual Effects</strong> tab, then check the radio button <strong>None</strong>.</p>
+<ul>
+<li><strong>CLI way to enable compositing effects</strong>: open a terminal and type:</li>
+</ul>
+<p>[bash]gconftool-2 -s '/apps/metacity/general/compositing_manager' --type bool true[/bash]</p>
+<ul>
+<li><strong>GUI way to enable compositing effects</strong>: open the <strong>Configuration Editor</strong> (gconf-editor), go to <strong>apps->metacity->general</strong> and enable the checkbox <strong>compositing_manager</strong>.</li>
+</ul>
+<p>Although&nbsp; Metacity is much smoother, the effects are minimal - just some shadows on windows and menus, windows preview for Alt+Tab.</p>
