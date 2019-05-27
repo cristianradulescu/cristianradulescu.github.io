@@ -26,6 +26,12 @@ repository: cristianradulescu/cristianradulescu.github.io
 
 show_excerpts: true
 
+defaults:
+  - scope:
+      path: "assets/blog"
+    values:
+      image: true
+
 # Build settings
 markdown: kramdown
 theme: minima
