@@ -11,11 +11,14 @@ excerpt: By default SonataAdminBundle doesn't come with a PDF export functionali
 date: '2013-02-03 22:55:33 +0200'
 date_gmt: '2013-02-03 20:55:33 +0200'
 ---
-<p>By default SonataAdminBundle doesn't come with a PDF export functionality. Since this is a nice feature to have in your application here's a way to add PDF export to the CRUD pages.</p>
-<p>The example works with the standard Symfony2 installation and the AcmeDemoBundle. The PDF will be generated using <a title="KnpSnappyBundle GIT page" href="https://github.com/KnpLabs/KnpSnappyBundle" target="_blank" rel="noopener">KnpSnappyBundle</a>&nbsp;(the installation process is not covered here).</p>
-<h2>The Doctrine Entity:</h2>
-<p>See&nbsp;<a href="http://cristian-radulescu.ro/article/doctrine-entities-in-twig-templates.html">http://cristian-radulescu.ro/article/doctrine-entities-in-twig-templates.html</a></p>
-<h2>The Color Admin class:</h2>
+By default SonataAdminBundle doesn't come with a PDF export functionality. Since this is a nice feature to have in your application here's a way to add PDF export to the CRUD pages.
+
+The example works with the standard Symfony2 installation and the AcmeDemoBundle. The PDF will be generated using [KnpSnappyBundle](https://github.com/KnpLabs/KnpSnappyBundle) (the installation process is not covered here).
+
+### The Doctrine Entity:
+See [Doctrine entities in Twig templates]({{ site.baseurl }}{% post_url 2013-01-30-doctrine-entities-in-twig-templates %})
+
+### The Color Admin class:
 {% highlight php %}
 // src/Acme/DemoBundle/Admin/ColorAdmin.php
 namespace Acme\DemoBundle\Admin;
@@ -53,17 +56,22 @@ namespace Acme\DemoBundle\Admin;
     }
   }
 {% endhighlight %}
-<h2>Enable the PDF export link on list page</h2>
-<p>In order to add the PDF export option the "getExportFormats" method needs to be overridden in the ColorAdmin class:</p>
+
+### Enable the PDF export link on list page
+In order to add the PDF export option the "getExportFormats" method needs to be overridden in the ColorAdmin class:
+
 {% highlight php %}
 public function getExportFormats()
 {
   return array_merge(parent::getExportFormats(), array('pdf'));
 }
 {% endhighlight%}
-<p>The "pdf" options should now be displayed on the list page next to the default ones.</p>
-<h2>Create custom service to handle PDF export</h2>
-<p>First the default export service (identified by "sonata.admin.exporter") needs to be overriden. Register the service in src/Acme/DemoBundle/Resources/config/services.xml and make it aware of the knpSnappyPdf. Also the template engine will be necessary.</p>
+
+The "pdf" options should now be displayed on the list page next to the default ones.
+
+### Create custom service to handle PDF export
+First the default export service (identified by "sonata.admin.exporter") needs to be overriden. Register the service in src/Acme/DemoBundle/Resources/config/services.xml and make it aware of the knpSnappyPdf. Also the template engine will be necessary.
+
 {% highlight xml %}
 <service id="sonata.admin.exporter" class="Acme\DemoBundle\Export\Exporter">
   <call method="setKnpSnappyPdf">
@@ -74,7 +82,9 @@ public function getExportFormats()
   </call>
 </service>
 {% endhighlight %}
-<p>Next extend the Sonata exporter class as defined in the overridden exporter service:</p>
+
+Next extend the Sonata exporter class as defined in the overridden exporter service:
+
 {% highlight php %}
 // src/Acme/DemoBundle/Export/Exporter.php
 namespace Acme\DemoBundle\Export;
@@ -116,7 +126,9 @@ class Exporter extends BaseExporter
   }
 }
 {% endhighlight %}
-<p>The last step is to add the Twig template used to render the PDF content, as specified in the custom exporter service. For example:</p>
+
+The last step is to add the Twig template used to render the PDF content, as specified in the custom exporter service. For example:
+
 {% highlight html %}{% raw %}
 <!-- src/Acme/DemoBundle/Resources/views/Export/pdf.html.pdf" -->
 <table border="1">
@@ -134,4 +146,5 @@ class Exporter extends BaseExporter
   {% endfor %}
 </table>
 {% endraw %}{% endhighlight %}
-<p>Of course, there is room for improvement. You can do it "SonataAdmin" way with a custom PdfWriter class (similar with the built-in XlsWriter, CsvWriter or JsonWriter) to separate the PDF conversion code, instead of having the entire process in the custom Exporter class.</p>
+
+Of course, there is room for improvement. You can do it "SonataAdmin" way with a custom PdfWriter class (similar with the built-in XlsWriter, CsvWriter or JsonWriter) to separate the PDF conversion code, instead of having the entire process in the custom Exporter class.
