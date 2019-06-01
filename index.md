@@ -1,3 +1,3 @@
 ---
-layout: home-with-post-limit
+layout: home
 ---
