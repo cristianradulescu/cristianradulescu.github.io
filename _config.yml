@@ -25,6 +25,7 @@ github_username:  cristianradulescu
 repository: cristianradulescu/cristianradulescu.github.io
 
 show_excerpts: true
+post_limit_date: '2012-01-01'
 
 defaults:
   - scope:
