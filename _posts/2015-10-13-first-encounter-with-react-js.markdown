@@ -10,7 +10,7 @@ excerpt: This is a small demo made using React and Boostrap. It's a list page wh
 date: '2015-10-13 23:25:40 +0300'
 date_gmt: '2015-10-13 20:25:40 +0300'
 ---
-[This](http://cristian-radulescu.ro/github-demos/react_demo-avengers/index.html) is a small demo made using React and Boostrap. 
+This is a small demo made using React and Boostrap. 
 It's a list page which contains some of the *Avengers*, with the possibility to reach a show page with details for each character.
 
 The conclusion:
@@ -18,7 +18,7 @@ The conclusion:
 * Easy to learn;
 * Possibility &nbsp;to port the web application to a native iOS or Android application with minimum of effort, using React Native.
 
-[The demo](http://cristian-radulescu.ro/github-demos/react_demo-avengers/index.html) / [The code](https://github.com/cristianradulescu/react_demo-avengers)
+[The code](https://github.com/cristianradulescu/react_demo-avengers)
 
 Screenshots:
 
