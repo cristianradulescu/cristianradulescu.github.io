@@ -14,13 +14,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 author: Cristian Radulescu
-title: Cristian Radulescu
-description: Software development tips & tricks
+title: My dev notes
+description: Notes taken during software development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://cristianradulescu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_username: cristianrd
 github_username:  cristianradulescu
+linkedin_username:  cristianrd
 
 repository: cristianradulescu/cristianradulescu.github.io
 
