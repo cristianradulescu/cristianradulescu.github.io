@@ -30,16 +30,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Jigsaw
-        run: composer install
+      - name: Jigsaw setup
+        run: composer install --no-interaction --no-suggest
       - name: Install NPM packages
         run: npm install
       - name: Build static files
         run: npm run prod
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1.0.3
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          # Path of the directory containing the static assets.
-          path: ${{ runner.temp }}/artifact.tar # default is _site/
-          # Duration after which artifact will expire in days.
-          retention-days: 1
+          # Upload entire repository
+          path: './build_production'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
