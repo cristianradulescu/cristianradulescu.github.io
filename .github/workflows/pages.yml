@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Jigsaw
-        run: composer install --no-interactions
+        run: composer install
       - name: Install NPM packages
         run: npm install
       - name: Build static files
