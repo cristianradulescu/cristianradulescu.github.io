@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://blog.crimsonlabs.ro',
+    'baseUrl' => 'https://cristianradulescu.github.io',
     'production' => true,
 ];
