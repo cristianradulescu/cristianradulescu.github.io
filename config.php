@@ -21,7 +21,7 @@ return [
 
     // GA4
     'ga4' => [
-        'code' => 'G-KS107Y673L'
+        'code' => 'G-180D4MRYND'
     ],
 
     // helpers
