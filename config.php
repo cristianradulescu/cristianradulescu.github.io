@@ -19,6 +19,11 @@ return [
         ],
     ],
 
+    // GA4
+    'ga4' => [
+        'code' => 'G-KS107Y673L'
+    ],
+
     // helpers
     'getDate' => function ($page) {
         return Datetime::createFromFormat('U', $page->date);
