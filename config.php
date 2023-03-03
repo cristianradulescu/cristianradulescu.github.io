@@ -5,8 +5,9 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'My dev notes',
-    'siteDescription' => 'Notes taken during coding and session',
+    'siteName' => 'Cristian Radulescu | dev notes',
+    'headerSiteName' => '~/cristian.radulescu/dev-notes',
+    'siteDescription' => 'Notes taken during coding sessions',
     'siteAuthor' => 'Cristian Radulescu',
 
     // collections
