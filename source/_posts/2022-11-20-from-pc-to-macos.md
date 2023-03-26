@@ -27,3 +27,5 @@ sudo spctl --master-disable && sudo xattr -rd com.apple.quarantine /Applications
 Replace _/Applications/CopyQ.app_ with the app that is reported in the error message.
 
 Bash script which automates the above command: [https://gist.github.com/cristianradulescu/5bb29875c8c771e12710e00824c01e74](https://gist.github.com/cristianradulescu/5bb29875c8c771e12710e00824c01e74).
+
+Other things to try - [Bill Mill's awesome setup script](https://gist.github.com/llimllib/c4dd0a98a426022b0365d4c0a9090460).
