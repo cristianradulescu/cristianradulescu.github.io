@@ -26,10 +26,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      # See: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Jigsaw Packages
         run: composer install --no-interaction
       - name: Install NPM Packages
@@ -37,11 +38,11 @@ jobs:
       - name: Build Static Files
         run: npm run prod
       - name: Setup Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: './build_production'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
