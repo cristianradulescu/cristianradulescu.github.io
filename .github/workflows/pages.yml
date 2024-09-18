@@ -34,7 +34,7 @@ jobs:
       - name: Install Jigsaw Packages
         run: composer install --no-interaction
       - name: Install NPM Packages
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build Static Files
         run: npm run prod
       - name: Setup Pages

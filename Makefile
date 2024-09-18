@@ -1,5 +1,5 @@
 setup:
-	composer install && npm install && npm run dev
+	composer install && npm install --legacy-peer-deps && npm run dev
 
 build:
 	vendor/bin/jigsaw build
