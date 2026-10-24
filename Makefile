@@ -1,11 +1,11 @@
 setup:
-	composer install && npm install --legacy-peer-deps && npm run dev
+	composer install
 
 build:
-	vendor/bin/jigsaw build
+	php bin/console site:build --env=prod && bin/write-redirects.sh
+
+build-dev:
+	php bin/console site:build && bin/write-redirects.sh
 
 serve:
-	vendor/bin/jigsaw serve
-
-watch:
-	yarn watch
+	php -S localhost:8000 -t build

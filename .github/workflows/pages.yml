@@ -28,21 +28,26 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
       # See: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-24.04
+    env:
+      APP_ENV: prod
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Jigsaw Packages
-        run: composer install --no-interaction
-      - name: Install NPM Packages
-        run: npm install --legacy-peer-deps
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: '8.5'
+          tools: composer
+      - name: Install Composer Packages
+        run: composer install --no-dev --no-interaction --prefer-dist
       - name: Build Static Files
-        run: npm run prod
+        run: php bin/console site:build --env=prod && bin/write-redirects.sh
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build_production'
+          path: './build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,7 @@
+staccato:
+    title: 'Cristian Radulescu | dev notes'
+    base_url: 'https://cristianradulescu.github.io'
+    description: 'Notes taken during coding sessions'
+    articles_per_page: 10
+    stylesheets: ['themes/site.css']
+    highlighter_css: 'vendor/tempest/highlight/src/Themes/Css/github-light.css'

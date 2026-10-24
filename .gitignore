@@ -1,6 +1,7 @@
-/build_*/
-!/build_production/
-/node_modules/
-/source/assets/build/
+/.env.local
+/.env.local.php
+/.env.*.local
+/build/
+/var/
 /vendor/
 .DS_Store
