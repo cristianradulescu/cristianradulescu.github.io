@@ -1,11 +1,12 @@
 Source code for https://cristianradulescu.github.io, built with [Staccato](https://github.com/cristianradulescu/staccato-bundle).
 
-- `content/articles/` – blog posts (Markdown with `title`, `date`, `excerpt` front matter)
+- `content/articles/` – blog posts (Markdown with `title`, `date`, `excerpt` front matter; `aliases` for old URLs)
 - `content/about.md` – the About page
-- `assets/` – static files, published under `/assets/`
-- `templates/bundles/StaccatoBundle/base.html.twig` – layout override (analytics, social metadata, navigation)
+- `assets/` – files published under `/assets/`
+- `static/` – files published at the site root (`favicon.ico`)
+- `templates/bundles/StaccatoBundle/base.html.twig` – extends the default layout with analytics, the site title and navigation
 - `themes/site.css` – style tweaks on top of the default Staccato theme
-- `bin/write-redirects.sh` – keeps URLs from the previous (Jigsaw) version of the site working
+- `src/EventListener/LegacyUrlsListener.php` – keeps pagination and feed URLs from the previous (Jigsaw) version of the site working
 
 Requires PHP 8.5+ and Composer.
 

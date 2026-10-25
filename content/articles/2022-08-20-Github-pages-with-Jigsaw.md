@@ -1,6 +1,7 @@
 ---
 title: 'GitHub pages with Jigsaw'
 date: 2022-08-20
+aliases: ['/2022-08-20-Github-pages-with-Jigsaw/']
 ---
 
 > **Update (October 2026):** this site has since moved from Jigsaw to [Staccato](https://github.com/cristianradulescu/staccato-bundle). The GitHub Pages setup below still applies; only the build steps of the workflow changed.

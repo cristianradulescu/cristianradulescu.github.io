@@ -1,6 +1,7 @@
 ---
 title: 'Print the ESSID of the wireless network'
 date: 2021-08-27
+aliases: ['/2021-08-27-Print-the-ESSID-of-the-wifi-network/']
 excerpt: 'CLI oneliner to print the ESSID of the wireless network'
 ---
 CLI oneliner to print the ESSID of the wireless network

@@ -747,6 +747,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     content_dir?: scalar|Param|null, // Default: "content"
  *     build_dir?: scalar|Param|null, // Default: "build"
  *     assets_dir?: scalar|Param|null, // Default: "assets"
+ *     static_dir?: scalar|Param|null, // Default: "static"
  * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,

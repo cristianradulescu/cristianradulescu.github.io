@@ -41,7 +41,7 @@ jobs:
       - name: Install Composer Packages
         run: composer install --no-dev --no-interaction --prefer-dist
       - name: Build Static Files
-        run: php bin/console site:build --env=prod && bin/write-redirects.sh
+        run: php bin/console site:build --env=prod
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
