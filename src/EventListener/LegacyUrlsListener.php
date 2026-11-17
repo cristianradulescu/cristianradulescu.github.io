@@ -14,8 +14,6 @@ use Twig\Environment;
 #[AsEventListener]
 final class LegacyUrlsListener
 {
-    private const PAGINATION_REDIRECTS = [2, 3];
-
     public function __construct(private readonly Environment $twig)
     {
     }
@@ -24,7 +22,8 @@ final class LegacyUrlsListener
     {
         $filesystem = new Filesystem();
 
-        foreach (self::PAGINATION_REDIRECTS as $number) {
+        // One redirect per listing page Staccato wrote (/page/2/, /page/3/, ...), so new pages get theirs too.
+        for ($number = 2; is_file($event->buildDirectory.'/page/'.$number.'/index.html'); ++$number) {
             $filesystem->dumpFile(
                 $event->buildDirectory.'/'.$number.'/index.html',
                 $this->twig->render('@Staccato/redirect.html.twig', [

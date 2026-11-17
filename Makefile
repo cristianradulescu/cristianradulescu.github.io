@@ -1,8 +1,10 @@
+.PHONY: setup build build-dev serve
+
 setup:
 	composer install
 
 build:
-	php bin/console site:build --env=prod
+	php bin/console site:build --no-drafts
 
 build-dev:
 	php bin/console site:build

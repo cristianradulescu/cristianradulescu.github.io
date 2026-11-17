@@ -12,7 +12,7 @@ Requires PHP 8.5+ and Composer.
 
 ```bash
 make setup
-make build   # production build into build/ (make build-dev includes drafts)
+make build   # build into build/ without drafts (make build-dev includes them)
 make serve   # http://localhost:8000
 ```
 
